@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './SearchBar.module.css';
 
 const SearchBar = () => {
     const [keyword, setKeyword] = useState('');
@@ -13,15 +14,19 @@ const SearchBar = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} style={{ margin: '20px', display: 'flex', justifyContent: 'center' }}>
-            <input
-                type="text"
-                placeholder="Search by make or model..."
-                value={keyword}
-                onChange={(e) => setKeyword(e.target.value)}
-                style={{ width: '300px', padding: '10px', fontSize: '16px' }}
-            />
-            <button type="submit" style={{ padding: '10px', marginLeft: '10px' }}>Search</button>
+        <form className={styles.searchForm} onSubmit={handleSubmit}>
+            <div className={styles.inputWrapper}>
+                <input
+                    type="text"
+                    className={styles.searchInput}
+                    placeholder="Search by make or model..."
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
+                />
+                <button type="submit" className={styles.searchButton}>
+                    🔍 Search
+                </button>
+            </div>
         </form>
     );
 };

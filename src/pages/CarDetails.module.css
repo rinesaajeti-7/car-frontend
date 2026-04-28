@@ -1,0 +1,222 @@
+/* CarDetails.module.css */
+.carDetails {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
+    padding: 2rem 1.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* Image Section */
+.imageSection {
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.carImage {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.carImage:hover {
+    transform: scale(1.02);
+}
+
+/* Details Section */
+.detailsSection {
+    padding: 2rem 2rem 2rem 0;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e2a3a;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.5px;
+}
+
+.priceTag {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #10b981;
+    background: #d1fae5;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.specsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.specCard {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.specCard:hover {
+    background: #eef2ff;
+    transform: translateY(-2px);
+}
+
+.specLabel {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.specValue {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e2a3a;
+}
+
+.description {
+    margin: 2rem 0;
+}
+
+.description h3 {
+    font-size: 1.25rem;
+    color: #1e2a3a;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.description p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.backButton {
+    background: linear-gradient(135deg, #1e2a3a 0%, #0f1724 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.backButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
+}
+
+/* Loading State */
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #1e2a3a;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
+    text-align: center;
+    padding: 2rem;
+}
+
+.errorContainer p {
+    color: #e53e3e;
+    margin-bottom: 1.5rem;
+}
+
+.retryButton {
+    background-color: #1e2a3a;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+/* Not Found */
+.notFound {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.2rem;
+    color: #718096;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .detailsSection {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .priceTag {
+        font-size: 1.5rem;
+    }
+
+    .specsGrid {
+        grid-template-columns: 1fr;
+    }
+}
