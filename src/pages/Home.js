@@ -6,7 +6,7 @@ import SearchBar from '../components/SearchBar';
 import styles from './Home.module.css';
 
 const Home = () => {
-    const [cars, setCars] = useState([]);
+    // const [cars, setCars] = useState([]);
     const [lastThreeCars, setLastThreeCars] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -26,7 +26,7 @@ const Home = () => {
             setError(null);
             const response = await axios.get('/cars');
             const allCars = response.data;
-            setCars(allCars);
+            // setCars(allCars);
             // Get last 3 cars (assuming newest by id descending or createdAt)
             const sorted = [...allCars].sort((a, b) => b.id - a.id);
             setLastThreeCars(sorted.slice(0, 3));
